@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <title>Happy Valentine's Day</title>
 
+<!-- Romantic Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin:0;
@@ -13,20 +16,25 @@ body {
   justify-content:center;
   align-items:center;
   background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-  font-family: 'Segoe UI', sans-serif;
+  font-family:'Dancing Script', cursive;
 }
 
 .container {
   text-align:center;
-  background:rgba(255,255,255,0.85);
+  background:rgba(255,255,255,0.9);
   padding:40px;
-  border-radius:20px;
+  border-radius:25px;
   box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
 
 h1 {
   color:#e6005c;
-  font-size:36px;
+  font-size:42px;
+  font-family:'Pacifico', cursive;
+}
+
+p{
+ font-size:24px;
 }
 
 .teddy {
@@ -35,6 +43,81 @@ h1 {
 }
 
 .rose {
+  font-size:50px;
+}
+
+button {
+  margin-top:20px;
+  padding:12px 30px;
+  font-size:22px;
+  border:none;
+  border-radius:30px;
+  background:#ff3366;
+  color:white;
+  cursor:pointer;
+  font-family:'Dancing Script', cursive;
+}
+
+button:hover {
+  background:#e6005c;
+}
+
+@keyframes bounce {
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-20px)}
+}
+
+/* Floating Hearts */
+.heart {
+  position:absolute;
+  color:red;
+  animation:float 6s linear infinite;
+}
+
+@keyframes float {
+  0%{transform:translateY(100vh);opacity:1;}
+  100%{transform:translateY(-10vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>💖 Happy Valentine's Day 💖</h1>
+
+  <div class="teddy">🧸</div>
+  <div class="rose">🌹</div>
+
+  <p>
+    My love,<br>
+    You are the reason I smile every day.<br>
+    My heart belongs to you forever ❤️
+  </p>
+
+  <button onclick="propose()">Will You Be My Valentine? 💍</button>
+</div>
+
+<script>
+function propose(){
+  alert("I love you ❤️ Will you marry me? 💍");
+}
+
+/* Create floating hearts */
+setInterval(()=>{
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.fontSize=(20+Math.random()*20)+"px";
+  document.body.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),6000);
+},300);
+</script>
+
+</body>
+</html>.rose {
   font-size:50px;
 }
 
